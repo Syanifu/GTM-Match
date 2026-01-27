@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
 import { notFound } from "next/navigation";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
@@ -10,19 +14,49 @@ import { MessageSquare, CheckCircle, Bookmark } from "lucide-react";
 import { mockUsers } from "@/lib/mock-data/users";
 import { mockProblems } from "@/lib/mock-data/problems";
 import { mockSolutions } from "@/lib/mock-data/solutions";
+import { useAuthStore } from "@/stores/auth-store";
+import type { User } from "@/types/user";
 
-interface ProfilePageProps {
-  params: Promise<{ username: string }>;
-}
+export default function ProfilePage() {
+  const params = useParams();
+  const username = params.username as string;
+  const { user: currentUser, isAuthenticated } = useAuthStore();
+  const [user, setUser] = useState<User | null>(null);
+  const [notFoundError, setNotFoundError] = useState(false);
 
-export default async function ProfilePage({ params }: ProfilePageProps) {
-  const { username } = await params;
+  useEffect(() => {
+    // Check if viewing own profile (authenticated user)
+    if (isAuthenticated && currentUser && currentUser.username === username) {
+      setUser(currentUser);
+      return;
+    }
 
-  // Find user by username
-  const user = mockUsers.find((u) => u.username === username);
+    // Otherwise, find user in mock data
+    const foundUser = mockUsers.find((u) => u.username === username);
+
+    if (foundUser) {
+      setUser(foundUser);
+    } else {
+      setNotFoundError(true);
+    }
+  }, [username, currentUser, isAuthenticated]);
+
+  if (notFoundError) {
+    notFound();
+  }
 
   if (!user) {
-    notFound();
+    return (
+      <div className="container py-8">
+        <div className="max-w-5xl mx-auto">
+          <Card>
+            <CardContent className="pt-6">
+              <p className="text-center text-muted-foreground">Loading profile...</p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    );
   }
 
   // Filter user's problems and solutions
@@ -32,11 +66,13 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
   // Mock saved items (in real app, this would come from user's saved collection)
   const savedProblems = mockProblems.slice(0, 2);
 
+  const isOwnProfile = isAuthenticated && currentUser?.username === username;
+
   return (
     <div className="container py-8">
       <div className="max-w-5xl mx-auto space-y-8">
         {/* Profile Header */}
-        <ProfileHeader user={user} isOwnProfile={false} />
+        <ProfileHeader user={user} isOwnProfile={isOwnProfile} />
 
         {/* Stats */}
         <ProfileStats user={user} />

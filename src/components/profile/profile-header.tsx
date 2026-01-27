@@ -1,4 +1,4 @@
-import { Edit, MapPin, Calendar, Link as LinkIcon, Twitter, Linkedin } from "lucide-react";
+import { Edit, MapPin, Calendar, Link as LinkIcon, Twitter, Linkedin, Briefcase, Building2 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -41,6 +41,24 @@ export function ProfileHeader({ user, isOwnProfile = false }: ProfileHeaderProps
 
           {user.bio && (
             <p className="text-sm">{user.bio}</p>
+          )}
+
+          {/* Professional Info */}
+          {(user.jobRole || user.currentCompany) && (
+            <div className="flex flex-wrap gap-4 text-sm">
+              {user.jobRole && (
+                <div className="flex items-center gap-1">
+                  <Briefcase className="h-4 w-4" />
+                  <span>{user.jobRole}</span>
+                </div>
+              )}
+              {user.currentCompany && (
+                <div className="flex items-center gap-1">
+                  <Building2 className="h-4 w-4" />
+                  <span>{user.currentCompany}</span>
+                </div>
+              )}
+            </div>
           )}
 
           {/* Meta Info */}

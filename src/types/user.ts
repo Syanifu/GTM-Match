@@ -15,6 +15,10 @@ export interface User {
     acceptedSolutions: number;
   };
   expertise: string[]; // Tags
+  // Professional information
+  contactNumber?: string;
+  currentCompany?: string;
+  jobRole?: string;
   social?: {
     linkedin?: string;
     twitter?: string;

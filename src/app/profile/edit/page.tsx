@@ -22,6 +22,9 @@ const profileSchema = z.object({
   name: z.string().min(1, "Name is required").min(2, "Name must be at least 2 characters"),
   username: z.string().min(3, "Username must be at least 3 characters").max(20).regex(/^[a-z0-9_]+$/, "Username can only contain lowercase letters, numbers, and underscores"),
   bio: z.string().max(500, "Bio must be less than 500 characters").optional(),
+  contactNumber: z.string().optional(),
+  currentCompany: z.string().optional(),
+  jobRole: z.string().optional(),
   website: z.string().url("Must be a valid URL").optional().or(z.literal("")),
   twitter: z.string().optional(),
   linkedin: z.string().url("Must be a valid URL").optional().or(z.literal("")),
@@ -47,6 +50,9 @@ export default function EditProfilePage() {
       name: user?.name || "",
       username: user?.username || "",
       bio: user?.bio || "",
+      contactNumber: user?.contactNumber || "",
+      currentCompany: user?.currentCompany || "",
+      jobRole: user?.jobRole || "",
       website: user?.social?.website || "",
       twitter: user?.social?.twitter || "",
       linkedin: user?.social?.linkedin || "",
@@ -107,6 +113,9 @@ export default function EditProfilePage() {
         name: data.name,
         username: data.username,
         bio: data.bio,
+        contactNumber: data.contactNumber,
+        currentCompany: data.currentCompany,
+        jobRole: data.jobRole,
         avatar: avatarPreview,
         expertise,
         social: {
@@ -183,7 +192,7 @@ export default function EditProfilePage() {
         <Card>
           <CardHeader>
             <CardTitle>Basic Information</CardTitle>
-            <CardDescription>Update your name and username</CardDescription>
+            <CardDescription>Update your personal and contact information</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">
@@ -200,6 +209,18 @@ export default function EditProfilePage() {
             </div>
 
             <div className="space-y-2">
+              <Label htmlFor="email">Email *</Label>
+              <Input
+                id="email"
+                type="email"
+                value={user.email}
+                disabled
+                className="bg-muted cursor-not-allowed"
+              />
+              <p className="text-xs text-muted-foreground">Email cannot be changed</p>
+            </div>
+
+            <div className="space-y-2">
               <Label htmlFor="username">Username *</Label>
               <Input
                 id="username"
@@ -210,6 +231,17 @@ export default function EditProfilePage() {
               {errors.username && (
                 <p className="text-sm text-destructive">{errors.username.message}</p>
               )}
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="contactNumber">Contact Number</Label>
+              <Input
+                id="contactNumber"
+                type="tel"
+                placeholder="+1 (555) 123-4567"
+                {...register("contactNumber")}
+                disabled={isSubmitting}
+              />
             </div>
 
             <div className="space-y-2">
@@ -224,6 +256,35 @@ export default function EditProfilePage() {
               {errors.bio && (
                 <p className="text-sm text-destructive">{errors.bio.message}</p>
               )}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Professional Information */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Professional Information</CardTitle>
+            <CardDescription>Your current role and company</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="currentCompany">Current Company</Label>
+              <Input
+                id="currentCompany"
+                placeholder="e.g., Acme Inc."
+                {...register("currentCompany")}
+                disabled={isSubmitting}
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="jobRole">Role</Label>
+              <Input
+                id="jobRole"
+                placeholder="e.g., VP of Growth"
+                {...register("jobRole")}
+                disabled={isSubmitting}
+              />
             </div>
           </CardContent>
         </Card>
