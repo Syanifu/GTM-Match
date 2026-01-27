@@ -39,7 +39,7 @@ export function SearchModal() {
         (p) =>
           p.title.toLowerCase().includes(query.toLowerCase()) ||
           p.description.toLowerCase().includes(query.toLowerCase()) ||
-          p.category.name.toLowerCase().includes(query.toLowerCase())
+          p.category.toLowerCase().includes(query.toLowerCase())
       ).slice(0, 3)
     : [];
 
@@ -64,7 +64,7 @@ export function SearchModal() {
         (t) =>
           t.name.toLowerCase().includes(query.toLowerCase()) ||
           t.description.toLowerCase().includes(query.toLowerCase()) ||
-          t.category.toLowerCase().includes(query.toLowerCase())
+          t.category.join(' ').toLowerCase().includes(query.toLowerCase())
       ).slice(0, 3)
     : [];
 
@@ -147,7 +147,7 @@ export function SearchModal() {
                     <div className="flex-1 min-w-0">
                       <div className="font-medium truncate">{problem.title}</div>
                       <div className="text-xs text-muted-foreground truncate">
-                        {problem.category.name} • {problem.metrics.solutionsCount} solutions
+                        {problem.category} • {problem.engagement.solutionsCount} solutions
                       </div>
                     </div>
                   </Command.Item>
@@ -219,7 +219,7 @@ export function SearchModal() {
                     <div className="flex-1 min-w-0">
                       <div className="font-medium truncate">{tool.name}</div>
                       <div className="text-xs text-muted-foreground truncate">
-                        {tool.category} • {tool.pricing}
+                        {tool.category.join(', ')} • {tool.pricing}
                       </div>
                     </div>
                   </Command.Item>
