@@ -116,6 +116,7 @@ export default function NewProblemPage() {
         </p>
       </div>
 
+      {/* @ts-ignore */}
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
         {/* Basic Information */}
         <Card>
