@@ -12,7 +12,7 @@ export const problemStep1Schema = z.object({
     "Customer Onboarding",
     "Content Distribution",
   ], {
-    required_error: "Please select a category",
+    message: "Please select a category",
   }),
   title: z
     .string()
@@ -68,7 +68,7 @@ export const problemStep4Schema = z.object({
     "Series C+",
     "Public",
   ], {
-    required_error: "Please select company stage",
+    message: "Please select company stage",
   }),
   companySize: z.string().min(1, "Company size is required"),
   teamSize: z.coerce
@@ -76,7 +76,7 @@ export const problemStep4Schema = z.object({
     .min(1, "Team size must be at least 1")
     .max(10000, "Team size seems too large"),
   gtmMotion: z.enum(["PLG", "Sales-led", "Hybrid"], {
-    required_error: "Please select GTM motion",
+    message: "Please select GTM motion",
   }),
   targetMarket: z.string().optional(),
   icp: z.string().optional(),

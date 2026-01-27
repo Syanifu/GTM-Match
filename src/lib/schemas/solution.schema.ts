@@ -31,7 +31,7 @@ export const solutionSchema = z.object({
     .string()
     .min(1, "Time to implement is required"),
   difficulty: z.enum(["easy", "medium", "hard"], {
-    required_error: "Please select difficulty level",
+    message: "Please select difficulty level",
   }),
   budget: z.string().optional(),
   teamSizeNeeded: z.coerce
