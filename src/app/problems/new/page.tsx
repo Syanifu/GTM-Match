@@ -44,6 +44,7 @@ export default function NewProblemPage() {
     setValue,
     watch,
   } = useForm<CompleteProblemData>({
+    // @ts-ignore - zodResolver type issue with z.coerce in production
     resolver: zodResolver(completeProblemSchema),
     defaultValues: {
       tags: [],
