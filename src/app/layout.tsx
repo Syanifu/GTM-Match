@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { SkipNav } from "@/components/shared/skip-nav";
 import { Toaster } from "sonner";
+import { AuthInitializer } from "@/components/providers/auth-initializer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <AuthInitializer />
         <SkipNav />
         <Navbar />
         <main id="main-content" className="min-h-screen">{children}</main>
