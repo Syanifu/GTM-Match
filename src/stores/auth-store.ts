@@ -33,7 +33,6 @@ const mockUser: User = {
       name: "Problem Solver",
       description: "Solved 50+ problems",
       icon: "trophy",
-      tier: "gold",
       earnedAt: new Date("2024-01-15"),
     },
     {
@@ -41,7 +40,6 @@ const mockUser: User = {
       name: "Top Contributor",
       description: "Top 1% contributor this month",
       icon: "star",
-      tier: "platinum",
       earnedAt: new Date("2024-02-01"),
     },
   ],
