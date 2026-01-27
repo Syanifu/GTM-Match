@@ -87,7 +87,7 @@ export function CommentItem({
 
           {/* Comment Actions */}
           <div className="flex items-center gap-4">
-            <UpvoteButton count={comment.upvotes} size="sm" />
+            <UpvoteButton count={comment.upvotes} />
             {depth < maxDepth && onReply && (
               <Button
                 variant="ghost"
