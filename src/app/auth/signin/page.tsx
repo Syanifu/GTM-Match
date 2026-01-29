@@ -40,16 +40,16 @@ export default function SignInPage() {
   };
 
   return (
-    <div className="container flex items-center justify-center min-h-[calc(100vh-4rem)] py-12">
+    <div className="container flex items-center justify-center min-h-[calc(100vh-4rem)] py-6 sm:py-12 px-4 sm:px-6">
       <Card className="w-full max-w-md">
-        <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-bold text-center">Sign In</CardTitle>
-          <CardDescription className="text-center">
+        <CardHeader className="space-y-1 px-4 sm:px-6">
+          <CardTitle className="text-xl sm:text-2xl font-bold text-center">Sign In</CardTitle>
+          <CardDescription className="text-center text-sm">
             Enter your email and password to access your account
           </CardDescription>
         </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+        <CardContent className="px-4 sm:px-6">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 sm:space-y-4">
             <div className="space-y-2">
               <label htmlFor="email" className="text-sm font-medium">
                 Email

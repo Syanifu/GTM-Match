@@ -135,39 +135,39 @@ export default function EditProfilePage() {
   };
 
   return (
-    <div className="container max-w-2xl py-8">
-      <Button variant="ghost" asChild className="mb-6">
+    <div className="container max-w-2xl py-4 sm:py-8 px-4 sm:px-6">
+      <Button variant="ghost" asChild className="mb-4 sm:mb-6 -ml-2">
         <Link href={`/profile/${user.username}`}>
           <ArrowLeft className="mr-2 h-4 w-4" />
           Cancel
         </Link>
       </Button>
 
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight mb-2">Edit Profile</h1>
-        <p className="text-muted-foreground">
+      <div className="mb-6 sm:mb-8">
+        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight mb-2">Edit Profile</h1>
+        <p className="text-sm sm:text-base text-muted-foreground">
           Update your profile information and preferences
         </p>
       </div>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-8">
         {/* Profile Picture */}
         <Card>
-          <CardHeader>
-            <CardTitle>Profile Picture</CardTitle>
+          <CardHeader className="px-4 sm:px-6">
+            <CardTitle className="text-lg sm:text-xl">Profile Picture</CardTitle>
             <CardDescription>Upload a profile picture</CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="flex items-center gap-4">
+          <CardContent className="space-y-4 px-4 sm:px-6">
+            <div className="flex flex-col sm:flex-row items-center gap-4">
               <Avatar className="h-20 w-20">
                 <AvatarImage src={avatarPreview} alt={user.name} />
                 <AvatarFallback className="text-xl">
                   {user.name.split(" ").map((n) => n[0]).join("")}
                 </AvatarFallback>
               </Avatar>
-              <div>
+              <div className="text-center sm:text-left">
                 <Label htmlFor="avatar" className="cursor-pointer">
-                  <div className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors">
                     <Upload className="h-4 w-4" />
                     <span>Upload Image</span>
                   </div>
@@ -385,11 +385,11 @@ export default function EditProfilePage() {
         </Card>
 
         {/* Submit */}
-        <div className="flex justify-end gap-4">
-          <Button type="button" variant="outline" asChild disabled={isSubmitting}>
+        <div className="flex flex-col-reverse sm:flex-row sm:justify-end gap-3 sm:gap-4">
+          <Button type="button" variant="outline" asChild disabled={isSubmitting} className="w-full sm:w-auto">
             <Link href={`/profile/${user.username}`}>Cancel</Link>
           </Button>
-          <Button type="submit" disabled={isSubmitting}>
+          <Button type="submit" disabled={isSubmitting} className="w-full sm:w-auto">
             {isSubmitting ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />

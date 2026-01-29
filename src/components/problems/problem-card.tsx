@@ -93,7 +93,7 @@ export function ProblemCard({ problem, className }: ProblemCardProps) {
         </div>
 
         {/* Engagement Stats */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4 flex-wrap">
           <UpvoteButton count={problem.engagement.upvotes} />
           <StatCard icon={MessageSquare} value={problem.engagement.commentsCount} />
           <StatCard icon={Eye} value={problem.engagement.views} />

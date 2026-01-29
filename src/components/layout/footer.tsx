@@ -6,8 +6,8 @@ import { Separator } from "@/components/ui/separator";
 export function Footer() {
   return (
     <footer className="border-t bg-background">
-      <div className="container py-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="container py-8 sm:py-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
           {/* Product */}
           <div>
             <h3 className="font-semibold mb-4">Product</h3>

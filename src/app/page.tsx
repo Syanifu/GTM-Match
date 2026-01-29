@@ -11,8 +11,6 @@ import {
   Target,
   Zap,
   BarChart,
-  Database,
-  Mail,
   ShoppingCart,
   FileText,
 } from "lucide-react";
@@ -32,24 +30,24 @@ export default function Home() {
     <div>
       {/* Hero Section */}
       <section className="border-b bg-gradient-to-b from-background to-muted/20">
-        <div className="container py-24 md:py-32">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+        <div className="container py-12 sm:py-16 md:py-24 lg:py-32">
+          <div className="max-w-3xl mx-auto text-center px-2">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6">
               Solve Your GTM Problems with{" "}
               <span className="text-primary">Real Solutions</span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-8">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8">
               A community marketplace where growth teams share challenges with metrics
               and get battle-tested solutions with proof.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+              <Button size="lg" asChild className="w-full sm:w-auto">
                 <Link href="/problems/new">
                   Post a Problem
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button size="lg" variant="outline" asChild className="w-full sm:w-auto">
                 <Link href="/problems">Browse Problems</Link>
               </Button>
             </div>
@@ -58,14 +56,14 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="container py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight mb-4">How It Works</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+      <section className="container py-10 sm:py-16">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3 sm:mb-4">How It Works</h2>
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
             Get real solutions to your GTM challenges in three simple steps
           </p>
         </div>
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-4 sm:gap-8 md:grid-cols-3">
           <Card className="text-center">
             <CardContent className="pt-6">
               <div className="mx-auto w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
@@ -106,14 +104,14 @@ export default function Home() {
       </section>
 
       {/* Categories Grid */}
-      <section className="container py-16 bg-muted/20">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight mb-4">Browse by Category</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+      <section className="container py-10 sm:py-16 bg-muted/20">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3 sm:mb-4">Browse by Category</h2>
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
             Find solutions specific to your GTM challenge area
           </p>
         </div>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
           <Link
             href="/problems?category=lead-generation"
             className="group block"
@@ -278,52 +276,52 @@ export default function Home() {
       </section>
 
       {/* Platform Stats */}
-      <section className="container py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight mb-4">
+      <section className="container py-10 sm:py-16">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3 sm:mb-4">
             Growing Community of GTM Professionals
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
             Join thousands of growth leaders sharing real challenges and proven solutions
           </p>
         </div>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-4">
           <Card>
-            <CardContent className="pt-6 text-center">
-              <div className="text-4xl font-bold text-primary mb-2">2,847</div>
-              <p className="text-sm text-muted-foreground">Problems Solved</p>
+            <CardContent className="p-4 sm:pt-6 text-center">
+              <div className="text-2xl sm:text-4xl font-bold text-primary mb-1 sm:mb-2">2,847</div>
+              <p className="text-xs sm:text-sm text-muted-foreground">Problems Solved</p>
             </CardContent>
           </Card>
           <Card>
-            <CardContent className="pt-6 text-center">
-              <div className="text-4xl font-bold text-primary mb-2">8,542</div>
-              <p className="text-sm text-muted-foreground">Solutions Shared</p>
+            <CardContent className="p-4 sm:pt-6 text-center">
+              <div className="text-2xl sm:text-4xl font-bold text-primary mb-1 sm:mb-2">8,542</div>
+              <p className="text-xs sm:text-sm text-muted-foreground">Solutions Shared</p>
             </CardContent>
           </Card>
           <Card>
-            <CardContent className="pt-6 text-center">
-              <div className="text-4xl font-bold text-primary mb-2">15.2K</div>
-              <p className="text-sm text-muted-foreground">Active Members</p>
+            <CardContent className="p-4 sm:pt-6 text-center">
+              <div className="text-2xl sm:text-4xl font-bold text-primary mb-1 sm:mb-2">15.2K</div>
+              <p className="text-xs sm:text-sm text-muted-foreground">Active Members</p>
             </CardContent>
           </Card>
           <Card>
-            <CardContent className="pt-6 text-center">
-              <div className="text-4xl font-bold text-primary mb-2">$2.4M</div>
-              <p className="text-sm text-muted-foreground">Revenue Impact</p>
+            <CardContent className="p-4 sm:pt-6 text-center">
+              <div className="text-2xl sm:text-4xl font-bold text-primary mb-1 sm:mb-2">$2.4M</div>
+              <p className="text-xs sm:text-sm text-muted-foreground">Revenue Impact</p>
             </CardContent>
           </Card>
         </div>
       </section>
 
       {/* Success Stories */}
-      <section className="container py-16 bg-muted/20">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight mb-4">Success Stories</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+      <section className="container py-10 sm:py-16 bg-muted/20">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3 sm:mb-4">Success Stories</h2>
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
             Real results from the GTM Match community
           </p>
         </div>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
           <Card>
             <CardHeader>
               <div className="flex items-center gap-3 mb-4">
@@ -409,20 +407,20 @@ export default function Home() {
       </section>
 
       {/* Trending Problems */}
-      <section className="container py-16">
-        <div className="flex items-center justify-between mb-8">
+      <section className="container py-10 sm:py-16">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 sm:mb-8">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight">Trending Problems</h2>
-            <p className="text-muted-foreground mt-2">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Trending Problems</h2>
+            <p className="text-sm sm:text-base text-muted-foreground mt-1 sm:mt-2">
               The most popular challenges facing GTM teams right now
             </p>
           </div>
-          <Button variant="ghost" asChild>
+          <Button variant="ghost" asChild className="self-start sm:self-auto">
             <Link href="/problems">View All</Link>
           </Button>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {trendingProblems.map((problem) => (
             <Card key={problem.id} className="hover:shadow-lg transition-shadow">
               <CardHeader>

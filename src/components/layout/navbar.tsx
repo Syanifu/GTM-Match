@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Search, Plus, Menu, X } from "lucide-react";
+import { Search, Plus, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -161,7 +161,7 @@ export function Navbar() {
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
               <span className="text-lg font-bold text-primary-foreground">GM</span>
             </div>
-            <span className="text-xl font-bold">GTM Match</span>
+            <span className="text-xl font-bold hidden xs:inline sm:inline">GTM Match</span>
           </Link>
 
           {/* Main Navigation */}
@@ -182,16 +182,23 @@ export function Navbar() {
         </div>
 
         {/* Right side actions */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 sm:gap-2">
           {/* Search */}
-          <Button variant="ghost" size="icon" onClick={() => setIsOpen(true)}>
+          <Button variant="ghost" size="icon" onClick={() => setIsOpen(true)} className="h-9 w-9">
             <Search className="h-5 w-5" />
+            <span className="sr-only">Search</span>
           </Button>
 
           {isAuthenticated ? (
             <>
-              {/* Post Problem Button */}
-              <Button asChild>
+              {/* Post Problem Button - Icon only on mobile, full on desktop */}
+              <Button asChild size="icon" className="h-9 w-9 sm:hidden">
+                <Link href="/problems/new">
+                  <Plus className="h-5 w-5" />
+                  <span className="sr-only">Post a Problem</span>
+                </Link>
+              </Button>
+              <Button asChild className="hidden sm:inline-flex">
                 <Link href="/problems/new">
                   <Plus className="h-4 w-4 mr-2" />
                   Post a Problem
@@ -236,10 +243,11 @@ export function Navbar() {
             </>
           ) : (
             <>
-              <Button variant="ghost" asChild>
+              {/* Hide auth buttons on mobile - available in hamburger menu */}
+              <Button variant="ghost" asChild className="hidden sm:inline-flex">
                 <Link href="/auth/signin">Sign In</Link>
               </Button>
-              <Button asChild>
+              <Button asChild className="hidden sm:inline-flex">
                 <Link href="/auth/signup">Sign Up</Link>
               </Button>
             </>

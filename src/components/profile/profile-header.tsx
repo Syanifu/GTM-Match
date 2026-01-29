@@ -1,4 +1,4 @@
-import { Edit, MapPin, Calendar, Link as LinkIcon, Twitter, Linkedin, Briefcase, Building2 } from "lucide-react";
+import { Edit, Calendar, Link as LinkIcon, Briefcase, Building2, Twitter, Linkedin } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -13,24 +13,24 @@ interface ProfileHeaderProps {
 
 export function ProfileHeader({ user, isOwnProfile = false }: ProfileHeaderProps) {
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       {/* Header Section */}
-      <div className="flex flex-col sm:flex-row gap-6 items-start">
-        <Avatar className="h-24 w-24">
+      <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center sm:items-start text-center sm:text-left">
+        <Avatar className="h-20 w-20 sm:h-24 sm:w-24">
           <AvatarImage src={user.avatar} alt={user.name} />
-          <AvatarFallback className="text-2xl">
+          <AvatarFallback className="text-xl sm:text-2xl">
             {user.name.split(" ").map((n) => n[0]).join("")}
           </AvatarFallback>
         </Avatar>
 
-        <div className="flex-1 space-y-4">
-          <div className="flex items-start justify-between gap-4">
+        <div className="flex-1 space-y-3 sm:space-y-4 w-full">
+          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4">
             <div>
-              <h1 className="text-3xl font-bold tracking-tight">{user.name}</h1>
+              <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">{user.name}</h1>
               <p className="text-muted-foreground">@{user.username}</p>
             </div>
             {isOwnProfile && (
-              <Button asChild>
+              <Button asChild className="w-full sm:w-auto">
                 <Link href="/profile/edit">
                   <Edit className="mr-2 h-4 w-4" />
                   Edit Profile
