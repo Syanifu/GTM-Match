@@ -30,10 +30,10 @@ const growthMetrics = [
 ];
 
 const ltvcacData = [
-  { industry: "B2B SaaS", avgLTV: 12000, avgCAC: 450, ratio: 26.7 },
-  { industry: "E-commerce", avgLTV: 800, avgCAC: 180, ratio: 4.4 },
-  { industry: "Marketplace", avgLTV: 2400, avgCAC: 320, ratio: 7.5 },
-  { industry: "Dev Tools", avgLTV: 18000, avgCAC: 680, ratio: 26.5 },
+  { industry: "SMB SaaS", avgLTV: 8000, avgCAC: 350, ratio: 22.9 },
+  { industry: "Mid-Market SaaS", avgLTV: 24000, avgCAC: 680, ratio: 35.3 },
+  { industry: "Enterprise SaaS", avgLTV: 120000, avgCAC: 18000, ratio: 6.7 },
+  { industry: "Dev Tools / API", avgLTV: 18000, avgCAC: 520, ratio: 34.6 },
 ];
 
 export default function BenchmarkingPage() {
@@ -43,9 +43,9 @@ export default function BenchmarkingPage() {
   return (
     <div className="container py-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight mb-2">Benchmarking Dashboard</h1>
+        <h1 className="text-3xl font-bold tracking-tight mb-2">B2B SaaS Benchmarks</h1>
         <p className="text-muted-foreground">
-          Compare your metrics against industry benchmarks
+          Compare your SaaS metrics against industry benchmarks by ARR stage
         </p>
       </div>
 
@@ -53,26 +53,26 @@ export default function BenchmarkingPage() {
       <div className="mb-8 flex gap-4">
         <Select value={selectedIndustry} onValueChange={setSelectedIndustry}>
           <SelectTrigger className="w-[200px]">
-            <SelectValue placeholder="Industry" />
+            <SelectValue placeholder="SaaS Category" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">All Industries</SelectItem>
-            <SelectItem value="b2b-saas">B2B SaaS</SelectItem>
-            <SelectItem value="ecommerce">E-commerce</SelectItem>
-            <SelectItem value="marketplace">Marketplace</SelectItem>
+            <SelectItem value="all">All B2B SaaS</SelectItem>
+            <SelectItem value="horizontal">Horizontal SaaS</SelectItem>
+            <SelectItem value="vertical">Vertical SaaS</SelectItem>
+            <SelectItem value="dev-tools">Dev Tools / API</SelectItem>
           </SelectContent>
         </Select>
 
         <Select value={selectedStage} onValueChange={setSelectedStage}>
           <SelectTrigger className="w-[200px]">
-            <SelectValue placeholder="Company Stage" />
+            <SelectValue placeholder="ARR Stage" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">All Stages</SelectItem>
-            <SelectItem value="pre-seed">Pre-seed</SelectItem>
-            <SelectItem value="seed">Seed</SelectItem>
-            <SelectItem value="series-a">Series A</SelectItem>
-            <SelectItem value="series-b">Series B</SelectItem>
+            <SelectItem value="all">All ARR Stages</SelectItem>
+            <SelectItem value="0-1m">$0-$1M ARR</SelectItem>
+            <SelectItem value="1-5m">$1M-$5M ARR</SelectItem>
+            <SelectItem value="5-20m">$5M-$20M ARR</SelectItem>
+            <SelectItem value="20m+">$20M+ ARR</SelectItem>
           </SelectContent>
         </Select>
       </div>
@@ -161,8 +161,8 @@ export default function BenchmarkingPage() {
         {/* LTV:CAC Ratio */}
         <Card>
           <CardHeader>
-            <CardTitle>LTV:CAC Ratio by Industry</CardTitle>
-            <CardDescription>Customer lifetime value to acquisition cost ratio</CardDescription>
+            <CardTitle>LTV:CAC Ratio by Segment</CardTitle>
+            <CardDescription>Customer lifetime value to acquisition cost ratio by target market</CardDescription>
           </CardHeader>
           <CardContent>
             <ResponsiveContainer width="100%" height={300}>

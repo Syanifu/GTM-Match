@@ -33,12 +33,12 @@ export default function Home() {
         <div className="container py-12 sm:py-16 md:py-24 lg:py-32">
           <div className="max-w-3xl mx-auto text-center px-2">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6">
-              Solve Your GTM Problems with{" "}
-              <span className="text-primary">Real Solutions</span>
+              B2B SaaS GTM Problems,{" "}
+              <span className="text-primary">Solved</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8">
-              A community marketplace where growth teams share challenges with metrics
-              and get battle-tested solutions with proof.
+              The community for B2B SaaS growth teams. Share your go-to-market challenges,
+              get battle-tested solutions from operators who've scaled ARR.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Button size="lg" asChild className="w-full sm:w-auto">
@@ -60,7 +60,7 @@ export default function Home() {
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3 sm:mb-4">How It Works</h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-            Get real solutions to your GTM challenges in three simple steps
+            Get real solutions to your B2B SaaS GTM challenges in three simple steps
           </p>
         </div>
         <div className="grid gap-4 sm:gap-8 md:grid-cols-3">
@@ -71,8 +71,8 @@ export default function Home() {
               </div>
               <h3 className="font-semibold text-lg mb-2">1. Post Your Problem</h3>
               <p className="text-sm text-muted-foreground">
-                Share your GTM challenge with detailed metrics, context, and current
-                approach. Be specific about what you've tried.
+                Share your SaaS GTM challenge with ARR context, pipeline metrics, and
+                what you've tried. The more specific, the better.
               </p>
             </CardContent>
           </Card>
@@ -83,8 +83,8 @@ export default function Home() {
               </div>
               <h3 className="font-semibold text-lg mb-2">2. Get Battle-Tested Solutions</h3>
               <p className="text-sm text-muted-foreground">
-                Experienced GTM professionals submit proven solutions with real metrics
-                and implementation details.
+                B2B SaaS operators who've scaled from seed to Series C+ submit proven
+                playbooks with real ARR impact data.
               </p>
             </CardContent>
           </Card>
@@ -95,8 +95,8 @@ export default function Home() {
               </div>
               <h3 className="font-semibold text-lg mb-2">3. Implement & Share Results</h3>
               <p className="text-sm text-muted-foreground">
-                Apply the solution, track results, and share your learnings to help
-                others facing similar challenges.
+                Apply the solution, track your metrics, and share your results to help
+                fellow SaaS founders and operators.
               </p>
             </CardContent>
           </Card>
@@ -279,10 +279,10 @@ export default function Home() {
       <section className="container py-10 sm:py-16">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3 sm:mb-4">
-            Growing Community of GTM Professionals
+            The B2B SaaS GTM Community
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-            Join thousands of growth leaders sharing real challenges and proven solutions
+            Join thousands of SaaS founders, growth leaders, and revenue operators sharing proven playbooks
           </p>
         </div>
         <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-4">
@@ -295,19 +295,19 @@ export default function Home() {
           <Card>
             <CardContent className="p-4 sm:pt-6 text-center">
               <div className="text-2xl sm:text-4xl font-bold text-primary mb-1 sm:mb-2">8,542</div>
-              <p className="text-xs sm:text-sm text-muted-foreground">Solutions Shared</p>
+              <p className="text-xs sm:text-sm text-muted-foreground">Playbooks Shared</p>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 sm:pt-6 text-center">
               <div className="text-2xl sm:text-4xl font-bold text-primary mb-1 sm:mb-2">15.2K</div>
-              <p className="text-xs sm:text-sm text-muted-foreground">Active Members</p>
+              <p className="text-xs sm:text-sm text-muted-foreground">SaaS Operators</p>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 sm:pt-6 text-center">
-              <div className="text-2xl sm:text-4xl font-bold text-primary mb-1 sm:mb-2">$2.4M</div>
-              <p className="text-xs sm:text-sm text-muted-foreground">Revenue Impact</p>
+              <div className="text-2xl sm:text-4xl font-bold text-primary mb-1 sm:mb-2">$48M</div>
+              <p className="text-xs sm:text-sm text-muted-foreground">ARR Impact</p>
             </CardContent>
           </Card>
         </div>
@@ -318,7 +318,7 @@ export default function Home() {
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3 sm:mb-4">Success Stories</h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-            Real results from the GTM Match community
+            Real ARR impact from B2B SaaS teams using GTM Match
           </p>
         </div>
         <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -328,14 +328,14 @@ export default function Home() {
                 <div className="w-10 h-10 rounded-full bg-blue-500" />
                 <div>
                   <p className="font-semibold">Sarah Chen</p>
-                  <p className="text-xs text-muted-foreground">VP of Growth @ TechCo</p>
+                  <p className="text-xs text-muted-foreground">VP Growth @ Series B SaaS</p>
                 </div>
               </div>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-4">
-                "Found a solution that reduced our CAC by 40% while scaling to $200K/month
-                in ad spend. The community's insights were invaluable."
+                "Found an outbound playbook that reduced our CAC by 40% while scaling
+                pipeline. We went from $2M to $5M ARR in 8 months."
               </p>
               <div className="flex gap-4 text-sm">
                 <div>
@@ -343,8 +343,8 @@ export default function Home() {
                   <div className="text-xs text-muted-foreground">CAC</div>
                 </div>
                 <div>
-                  <div className="font-semibold text-primary">$200K</div>
-                  <div className="text-xs text-muted-foreground">Monthly Spend</div>
+                  <div className="font-semibold text-primary">$5M</div>
+                  <div className="text-xs text-muted-foreground">ARR</div>
                 </div>
               </div>
             </CardContent>
@@ -355,19 +355,19 @@ export default function Home() {
                 <div className="w-10 h-10 rounded-full bg-green-500" />
                 <div>
                   <p className="font-semibold">Mike Rodriguez</p>
-                  <p className="text-xs text-muted-foreground">Head of Sales @ StartupXYZ</p>
+                  <p className="text-xs text-muted-foreground">Head of Sales @ DevTools Startup</p>
                 </div>
               </div>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-4">
-                "Implemented a lead scoring solution that improved our sales team's efficiency
-                by 3x. Close rates went from 8% to 24%."
+                "Implemented a PLG to sales-assist motion that improved ACV by 3x.
+                Enterprise close rates went from 8% to 24%."
               </p>
               <div className="flex gap-4 text-sm">
                 <div>
                   <div className="font-semibold text-primary">3x</div>
-                  <div className="text-xs text-muted-foreground">Efficiency</div>
+                  <div className="text-xs text-muted-foreground">ACV</div>
                 </div>
                 <div>
                   <div className="font-semibold text-primary">24%</div>
@@ -382,23 +382,23 @@ export default function Home() {
                 <div className="w-10 h-10 rounded-full bg-purple-500" />
                 <div>
                   <p className="font-semibold">Emily Park</p>
-                  <p className="text-xs text-muted-foreground">Marketing Ops @ ScaleUp</p>
+                  <p className="text-xs text-muted-foreground">RevOps @ Vertical SaaS</p>
                 </div>
               </div>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-4">
-                "Discovered a multi-touch attribution setup that finally gave us accurate
-                ROI data. Budget allocation is now data-driven."
+                "Discovered a customer expansion playbook that increased NRR from 105%
+                to 125%. Now hitting $10M ARR with same customer base."
               </p>
               <div className="flex gap-4 text-sm">
                 <div>
-                  <div className="font-semibold text-primary">95%</div>
-                  <div className="text-xs text-muted-foreground">Accuracy</div>
+                  <div className="font-semibold text-primary">125%</div>
+                  <div className="text-xs text-muted-foreground">NRR</div>
                 </div>
                 <div>
-                  <div className="font-semibold text-primary">+35%</div>
-                  <div className="text-xs text-muted-foreground">ROI</div>
+                  <div className="font-semibold text-primary">$10M</div>
+                  <div className="text-xs text-muted-foreground">ARR</div>
                 </div>
               </div>
             </CardContent>
@@ -412,7 +412,7 @@ export default function Home() {
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Trending Problems</h2>
             <p className="text-sm sm:text-base text-muted-foreground mt-1 sm:mt-2">
-              The most popular challenges facing GTM teams right now
+              The most popular challenges facing B2B SaaS teams right now
             </p>
           </div>
           <Button variant="ghost" asChild className="self-start sm:self-auto">

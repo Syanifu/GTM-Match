@@ -78,7 +78,7 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Community</h3>
             <p className="text-sm text-muted-foreground mb-4">
-              Join our community of GTM professionals
+              Join our community of B2B SaaS operators
             </p>
             <div className="flex gap-2">
               <Button variant="outline" size="icon" asChild>
@@ -109,7 +109,7 @@ export function Footer() {
             </div>
             <span>© 2025 GTM Match. All rights reserved.</span>
           </div>
-          <p>Built for the GTM community, by the GTM community.</p>
+          <p>Built for B2B SaaS operators, by B2B SaaS operators.</p>
         </div>
       </div>
     </footer>

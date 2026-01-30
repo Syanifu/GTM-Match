@@ -50,7 +50,7 @@ export default function SignUpPage() {
         <CardHeader className="space-y-1 px-4 sm:px-6">
           <CardTitle className="text-xl sm:text-2xl font-bold text-center">Create an Account</CardTitle>
           <CardDescription className="text-center text-sm">
-            Join the GTM Match community and start solving challenges
+            Join the B2B SaaS GTM community
           </CardDescription>
         </CardHeader>
         <CardContent className="px-4 sm:px-6">

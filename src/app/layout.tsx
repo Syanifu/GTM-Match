@@ -10,8 +10,8 @@ import { AuthInitializer } from "@/components/providers/auth-initializer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "GTM Match - Solve Your GTM Problems",
-  description: "A community marketplace where growth teams share challenges with metrics and get battle-tested solutions with proof.",
+  title: "GTM Match - B2B SaaS Go-to-Market Solutions",
+  description: "The community for B2B SaaS growth teams. Share go-to-market challenges, get battle-tested playbooks from operators who've scaled ARR.",
 };
 
 export default function RootLayout({

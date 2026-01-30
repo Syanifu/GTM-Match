@@ -24,7 +24,7 @@ export default function GuidelinesPage() {
             <div>
               <h3 className="font-semibold mb-2 text-green-600">DO</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>• Provide specific context (company size, stage, industry, current metrics)</li>
+                <li>• Provide specific context (ARR stage, company size, ACV, GTM motion, current metrics)</li>
                 <li>• Share what you've already tried and the results</li>
                 <li>• Include concrete numbers when possible</li>
                 <li>• Be clear about your timeline and constraints</li>
@@ -93,7 +93,7 @@ export default function GuidelinesPage() {
             <div>
               <h3 className="font-semibold mb-2">Stay Professional</h3>
               <p className="text-sm text-muted-foreground">
-                Keep discussions focused on GTM challenges and solutions. Avoid off-topic conversations, spam,
+                Keep discussions focused on B2B SaaS GTM challenges and solutions. Avoid off-topic conversations, spam,
                 or excessive self-promotion.
               </p>
             </div>
