@@ -30,3 +30,13 @@ export type { Notification, NotificationType } from "./notification";
 
 // Benchmark types
 export type { Benchmark, BenchmarkFilter } from "./benchmark";
+
+// Job types
+export type {
+  Job,
+  JobType,
+  WorkLocation,
+  ExperienceLevel,
+  JobSalary,
+  JobFilters,
+} from "./job";
