@@ -32,6 +32,11 @@ export function Footer() {
                   Tools Directory
                 </Link>
               </li>
+              <li>
+                <Link href="/test" className="hover:text-foreground transition-colors">
+                  GTM Challenges
+                </Link>
+              </li>
             </ul>
           </div>
 
