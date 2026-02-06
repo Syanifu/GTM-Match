@@ -97,13 +97,6 @@ export function Navbar() {
                   Jobs
                 </Link>
                 <Link
-                  href="/benchmarking"
-                  onClick={closeMobileMenu}
-                  className="text-lg font-medium hover:text-primary transition-colors"
-                >
-                  Benchmarks
-                </Link>
-                <Link
                   href="/test"
                   onClick={closeMobileMenu}
                   className="text-lg font-medium hover:text-primary transition-colors"
@@ -191,9 +184,6 @@ export function Navbar() {
             </Button>
             <Button variant="ghost" asChild>
               <Link href="/jobs">Jobs</Link>
-            </Button>
-            <Button variant="ghost" asChild>
-              <Link href="/benchmarking">Benchmarks</Link>
             </Button>
             <Button variant="ghost" asChild>
               <Link href="/test">Test</Link>
