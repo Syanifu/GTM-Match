@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams } from "next/navigation";
 import { getCategoryById, getQuestionsByCategory } from "@/lib/mock-data/tests";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
@@ -19,20 +19,26 @@ export default function TestPage() {
     const [answers, setAnswers] = useState<Record<string, string>>({});
     const [isCompleted, setIsCompleted] = useState(false);
     const [score, setScore] = useState(0);
-    const [startTime] = useState(Date.now());
     const [elapsedTime, setElapsedTime] = useState(0);
+    const [isMounted, setIsMounted] = useState(false);
+    const startTimeRef = useRef<number>(0);
 
     const category = getCategoryById(categoryId);
     const questions = getQuestionsByCategory(categoryId);
 
     useEffect(() => {
-        if (!isCompleted) {
+        setIsMounted(true);
+        startTimeRef.current = Date.now();
+    }, []);
+
+    useEffect(() => {
+        if (!isCompleted && isMounted) {
             const timer = setInterval(() => {
-                setElapsedTime(Math.floor((Date.now() - startTime) / 1000));
+                setElapsedTime(Math.floor((Date.now() - startTimeRef.current) / 1000));
             }, 1000);
             return () => clearInterval(timer);
         }
-    }, [startTime, isCompleted]);
+    }, [isCompleted, isMounted]);
 
     const formatTime = (seconds: number) => {
         const mins = Math.floor(seconds / 60);
@@ -129,7 +135,7 @@ export default function TestPage() {
                                 <div className="text-sm text-muted-foreground">Passing Score</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-4xl font-bold">{formatTime(elapsedTime)}</div>
+                                <div className="text-4xl font-bold" suppressHydrationWarning>{formatTime(elapsedTime)}</div>
                                 <div className="text-sm text-muted-foreground">Time Taken</div>
                             </div>
                         </div>
@@ -171,9 +177,9 @@ export default function TestPage() {
                         Back
                     </Link>
                 </Button>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground" suppressHydrationWarning>
                     <Clock className="w-4 h-4" />
-                    {formatTime(elapsedTime)}
+                    <span suppressHydrationWarning>{formatTime(elapsedTime)}</span>
                 </div>
             </div>
 
