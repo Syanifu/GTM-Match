@@ -93,7 +93,7 @@ export default function JobsPage() {
 
         {/* Job Detail - Mobile (Sheet) */}
         {selectedJob && (
-          <div className="lg:hidden fixed inset-0 z-50 bg-background">
+          <div className="lg:hidden fixed top-16 left-0 right-0 bottom-0 z-40 bg-background">
             <div className="h-full flex flex-col">
               <div className="flex items-center justify-between p-4 border-b">
                 <h2 className="font-semibold">Job Details</h2>
