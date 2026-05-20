@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 240 5% 93%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-bg text-fg font-sans text-base leading-relaxed antialiased;
+  }
+
+  .text-fg-muted {
+    color: #8a8a93;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-mono font-normal tracking-[-0.02em];
+  }
+}
+
+@layer utilities {
+  .glass-border {
+    border-image: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.12),
+        rgba(255, 255, 255, 0.02)
+      )
+      1;
+  }
+}
